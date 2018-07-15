@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Time</title>
+    <script type="text/javascript">
+      function time(){
+      var myDay = new Array("Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat");
+      var now = new Date();
+      var year = now.getFullYear();
+      var month = now.getMonth() + 1
+      var date = now.getDate();
+      var day = now.getDay();
+      var hour = now.getHours();
+      var minute = now.getMinutes();
+      var second = now.getSeconds();
+      
+      if(hour < 10){
+        hour = "0" + hour;
+      }
+
+      if(minute < 10){
+        minute = "0" + minute;
+      }
+
+      if(second < 10){
+        second = "0" + second;
+      }
+
+      var format = year + "/" + month + "/" + date + " " + myDay[day] + "<br>" + hour + ":" + minute + ":" + second;
+      document.getElementById("row").innerHTML = format;
+      }
+
+    setInterval("time()" , 1000);
+    </script>
+    <style>
+      body{
+        background-color: #000;
+      }
+
+      h1{font-family: arial, sans-serif;
+        font-size: 75px;
+        color: #00ff00;
+        font-style: italic;
+        text-align: center;
+      }
+
+      #row{
+        font-family: arial, sans-serif;
+        font-size: 50px;
+        color: #00ff00;
+        font-style: italic;
+        text-align: center;
+      }
+
+    </style>
+  </head>
+  <body onLoad="time()">
+    <h1>Time</h1>
+    <div id = "row"></div>
+  </body>
+ </html>
