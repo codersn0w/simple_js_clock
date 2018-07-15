@@ -14,37 +14,31 @@
       var hour = now.getHours();
       var minute = now.getMinutes();
       var second = now.getSeconds();
-      
       if(hour < 10){
         hour = "0" + hour;
       }
-
       if(minute < 10){
         minute = "0" + minute;
       }
-
       if(second < 10){
         second = "0" + second;
       }
-
       var format = year + "/" + month + "/" + date + " " + myDay[day] + "<br>" + hour + ":" + minute + ":" + second;
       document.getElementById("row").innerHTML = format;
       }
-
     setInterval("time()" , 1000);
     </script>
+
     <style>
       body{
         background-color: #000;
       }
-
       h1{font-family: arial, sans-serif;
         font-size: 75px;
         color: #00ff00;
         font-style: italic;
         text-align: center;
       }
-
       #row{
         font-family: arial, sans-serif;
         font-size: 50px;
